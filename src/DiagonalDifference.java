@@ -1,9 +1,21 @@
 import java.util.Scanner;
 
+import static java.lang.Math.abs;
+
 public class DiagonalDifference {
 
     static int diagonalDifference(int[][] a) {
         // Complete this function
+        int sum1 = 0;
+        int sum2 = 0;
+        for ( int i = 0; i < a[0].length; i++ ){
+            sum1 += a[i][i];
+        }
+        for ( int j = a[0].length - 1; j > 0; j-- ) {
+            sum2 += a[j][j];
+        }
+
+        return abs(sum2 - sum1);
     }
 
     public static void main(String[] args) {
