@@ -9,11 +9,21 @@ public class DiagonalDifference {
         int sum1 = 0;
         int sum2 = 0;
         for ( int i = 0; i < a[0].length; i++ ){
-            sum1 += a[i][i];
+            for ( int j = 0; j < a[0].length; j++ ){
+                sum1 += a[i][i];
+                break;
+            }
         }
-        for ( int j = a[0].length - 1; j > 0; j-- ) {
-            sum2 += a[j][j];
+
+        for ( int i = 0; i < a[0].length; i++ ){
+            for ( int j = a[0].length - 1; j >= 0; j-- ) {
+
+                sum2 += a[i][a[0].length - 1 - i];
+                break;
+            }
         }
+
+
 
         return abs(sum2 - sum1);
     }
