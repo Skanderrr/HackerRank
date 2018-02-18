@@ -2,6 +2,17 @@ import java.util.Scanner;
 
 public class BirthdayCakeCandles {
     static int birthdayCakeCandles(int n, int[] ar) {
+        int max = ar[0];
+        int ones = 1;
+        for ( int i = 1; i < n; i++ ) {
+            if (ar[i] > max) {
+                max = ar[i];
+                ones = 1;
+            }
+            else if (ar[i] == max)
+                ones += 1;
+        }
+        return ones;
         // Complete this function
     }
 
